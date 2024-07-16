@@ -13,7 +13,7 @@
 <body class="corpo">
     <header class="cabecalho">
         <nav class="head">
-            <a class="logo" href="index.html">Yan Felipe</a>
+            <a id="logo-link" class="logo" href="index.html">Yan Felipe</a>
             <div class="mobile-menu">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -25,17 +25,22 @@
             </ul>
         </nav>
     </header>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            function preventReloadIfHomepage(linkElement) {
+                linkElement.addEventListener('click', function(event) {
+                    if (window.location.pathname === '/index.html' || window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
+                        event.preventDefault();
+                    }
+                });
+            }
+
             var homepageLink = document.getElementById('homepage-link');
-            
-            homepageLink.addEventListener('click', function(event) {
-                // Verifica se o usuário já está na página "Homepage"
-                if (window.location.pathname === '/index.html' || window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
-                    event.preventDefault();
-                }
-            });
+            var logoLink = document.getElementById('logo-link');
+
+            preventReloadIfHomepage(homepageLink);
+            preventReloadIfHomepage(logoLink);
         });
     </script>
     <main class="container">
