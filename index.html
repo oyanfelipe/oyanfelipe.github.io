@@ -28,24 +28,24 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            function preventReloadIfHomepage(linkElement) {
+            function preventReloadIfHomepage(linkElement, homepageURL) {
                 linkElement.addEventListener('click', function(event) {
-                    var currentPath = window.location.pathname;
-                    // Verifica se o usuário já está na página inicial
-                    if (currentPath === '/' || currentPath === '/index.html') {
+                    // Verifica se a URL atual é a mesma que a URL da homepage
+                    if (window.location.href === homepageURL) {
                         event.preventDefault();
                     }
                 });
             }
 
+            var homepageURL = "https://oyanfelipe.github.io/";
             var homepageLink = document.getElementById('homepage-link');
             var logoLink = document.getElementById('logo-link');
 
-            preventReloadIfHomepage(homepageLink);
-            preventReloadIfHomepage(logoLink);
+            preventReloadIfHomepage(homepageLink, homepageURL);
+            preventReloadIfHomepage(logoLink, homepageURL);
         });
     </script>
-    
+
     <main class="container">
         <section class="container-principal">
             <div class="container-btn">
