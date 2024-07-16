@@ -20,23 +20,24 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a class="menu" href="index.html">Homepage</a></li>
+                <li><a id="homepage-link" class="menu" href="index.html">Homepage</a></li>
                 <li><a class="menu" href="aboutme.html">About me</a></li>
             </ul>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    var homepageLink = document.getElementById('homepage-link');
-                    
-                    homepageLink.addEventListener('click', function(event) {
-                        // Verifica se o usuário já está na página "Homepage"
-                        if (window.location.pathname === '/index.html' || window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
-                            event.preventDefault();
-                        }
-                    });
-                });
-            </script>
         </nav>
     </header>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var homepageLink = document.getElementById('homepage-link');
+            
+            homepageLink.addEventListener('click', function(event) {
+                // Verifica se o usuário já está na página "Homepage"
+                if (window.location.pathname === '/index.html' || window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
     <main class="container">
         <section class="container-principal">
             <div class="container-btn">
