@@ -23,6 +23,18 @@
                 <li><a class="menu" href="index.html">Homepage</a></li>
                 <li><a class="menu" href="aboutme.html">About me</a></li>
             </ul>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var homepageLink = document.getElementById('homepage-link');
+                    
+                    homepageLink.addEventListener('click', function(event) {
+                        // Verifica se o usuário já está na página "Homepage"
+                        if (window.location.pathname === '/index.html' || window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
+                            event.preventDefault();
+                        }
+                    });
+                });
+            </script>
         </nav>
     </header>
     <main class="container">
@@ -32,12 +44,13 @@
             </div>
         </section>
         <section class="container-secundario">
+            <div class="message">
+                <h3 class="text">Seja bem-vindo ao meu</h3>
+            </div>
             <div class="portfolio">
                 <h1 class="textport">PORTFOLIO</h1>
             </div>
-            <div class="message">
-                <h3 class="text">Seja bem-vindo ao meu primeiro site!</h3>
-            </div>
+            
         </section>
     </main>
     <script src="../static/js/mobile-navbar.js"></script>
