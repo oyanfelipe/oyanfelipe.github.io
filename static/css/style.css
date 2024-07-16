@@ -1,0 +1,344 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+@font-face {
+  font-family: 'Cigra-FREEDEMO';
+  src: url('../fonts/WEB FONT/Cigra Free Demo.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/WEB FONT/Cigra Free Demo.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/WEB FONT/Cigra Free Demo.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/Cigra Free Demo.ttf') format('truetype'); /* Safari, Android, iOS */
+      font-style: normal;
+  font-weight: normal;
+}
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+[data-theme="dark"] {
+  --background-color: black;
+  --text-color: #fffaf1;
+  --transition: background .5s;
+}
+.corpo{
+  background-color: #FFFAF1;
+  transition: background .5s;
+}
+.corpo.activ{
+  background-color: black;
+  transition: background .5s;
+}
+.cabecalho{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.head{
+  display: flex;
+  justify-content: space-around;
+}
+.logo {
+  font-family: Cigra-FREEDEMO, serif;
+  color: #1d6440;
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.menu {
+  font-family: "Neue Haas Grotesk Display Pro";
+  color: #1d6440;
+  font-weight: 400;
+  font-size: 18px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid #1d6440;
+  border-bottom: 2px solid #1d6440;
+}
+
+.container-principal {
+  display: flex;
+  justify-content: end;
+  padding: 24px;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  padding-bottom: 50px;
+  padding-top: 30px;
+  flex-wrap: wrap;
+}
+.container-principal-a {
+  display: flex;
+  justify-content: end;
+  padding: 24px;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  padding-bottom: 50px;
+  padding-top: 30px;
+  flex-wrap: wrap;
+}
+.container-secundario {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 48px;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  padding-bottom: max(300px, 6vw);
+  padding-top: max(150px, 6vw);
+  flex-wrap: wrap;
+}
+.container-secundario-a {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 30px;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  padding-bottom: 50px;
+  padding-top: 30px;
+  flex-wrap: wrap;
+}
+.container-secundario-a div{
+  flex: 1 1 300px;
+}
+.message {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 32px;
+}
+.message-a {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.textport {
+  font-family: 'Cigra-FREEDEMO', "Neue Haas Grotesk Display Pro";
+  margin-left: 20px;
+  font-weight: 400;
+  font-size: min(900px, 13vw);
+  color: #1d6440;
+}
+.text {
+  font-family: 'Cigra-FREEDEMO', "Neue Haas Grotesk Display Pro";
+  margin-left: 20px;
+  font-weight: 400;
+  font-size: min(30px, 3vw);
+  color: #1d6440;
+}
+.paragrafo{
+  font-family: "Neue Haas Grotesk Display Pro";
+  font-weight: 100;
+  font-size: 20px;
+}
+
+.imagem-principal {
+  max-width: 555px;
+  border: 2px solid #1d6440;
+}
+img{
+  width: 100%;
+}
+.container-btn {
+  background: #FFFAF1;
+  transition: background .5s;
+  padding-right: 6px;
+
+}
+
+.container-btn.activ {
+  background: black;
+  transition: background .5s;
+}
+
+.btn {
+  width: 50px;
+  height: 24px;
+  border: 3px solid #1d6440;
+  border-radius: 60px;
+  position: relative;
+  cursor: pointer;
+}
+.btn:before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #1d6440;
+  border-radius: 50%;
+  top: 50%;
+  left: 1px;
+  transform: translateY(-50%);
+  transition: left .5s;
+}
+.btn.activ:before {
+  left: 29px;
+}
+
+.button.activ {
+  background-color: black;
+  transition: background .5s;
+}
+.button {
+  background-color: #FFFAF1;
+  color: #1d6440;
+  font-size: 16px;
+  font-weight: 400;
+  transition: background .5s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: 2px solid #1d6440;
+  border-radius: 10px;
+  width: 180px;
+  height: 60px;
+  margin-left: 24px;
+}
+.button:hover {
+  background-color: #1d6440;
+  color: #FFFAF1;
+}
+.button.activ:hover{
+  color: black;
+}
+
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #1d6440;
+  margin: 8px;
+  transition: 0.3s;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-list {
+    position: absolute;
+    font-weight: 300;
+    font-size: 40px;
+    top: 120px;
+    right: 0;
+    width: 100vw;
+    height: 92vh;
+    background: #FFFAF1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transform: translateX(100%);
+    transition: background .5s, transform 0.3s ease-in;
+  }
+
+  .nav-list.activ {
+    background-color: black;
+    transition: background .5s;
+  }
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+.nav-list.active {
+  transform: translateX(0);
+}
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+
+.corpo {
+  font-size: 100%;
+  background: #FFFAF1;
+  transition: background .5s;
+}
+.corpo.activ{
+  background: black;
+  transition: background .5s;
+}
+
+.rodape {
+  padding-right: 32px;
+  padding-left: 32px;
+  padding-bottom: 32px;
+}
+.footer-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  max-width: 500px;
+  margin: 5px auto;
+  line-height: 28px;
+  font-size: 14px;
+}
+
+.socials{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+.socials li{
+  margin: 0 10px;
+}
+.socials a{
+  text-decoration: none;
+  color: #1d6440;
+}
+.socials a i{
+  font-size: 1.1rem;
+  transition: color .4s ease;
+}
+.footer-bottom{
+  text-align: center;
+}
+
+.footer-bottom p{
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+.footer-bottom span{
+  text-transform: uppercase;
+  opacity: .4;
+  font-weight: 200;
+}
