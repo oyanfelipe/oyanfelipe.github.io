@@ -13,39 +13,30 @@
 <body class="corpo">
     <header class="cabecalho">
         <nav class="head">
-            <a id="logo-link" class="logo" href="index.html">Yan Felipe</a>
+            <a class="logo" href="https://oyanfelipe.github.io/">Yan Felipe</a>
             <div class="mobile-menu">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a id="homepage-link" class="menu" href="index.html">Homepage</a></li>
+                <li><a class="menu" href="https://oyanfelipe.github.io/">Homepage</a></li>
                 <li><a class="menu" href="aboutme.html">About me</a></li>
             </ul>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var homepageLink = document.getElementById('homepage-link');
+                    
+                    homepageLink.addEventListener('click', function(event) {
+                        // Verifica se o usuário já está na página "Homepage"
+                        if (window.location.pathname === '/index.html' || window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
+                            event.preventDefault();
+                        }
+                    });
+                });
+            </script>
         </nav>
     </header>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            function preventReloadIfHomepage(linkElement, homepageURL) {
-                linkElement.addEventListener('click', function(event) {
-                    // Verifica se a URL atual é a mesma que a URL da homepage
-                    if (window.location.href === homepageURL) {
-                        event.preventDefault();
-                    }
-                });
-            }
-
-            var homepageURL = "https://oyanfelipe.github.io/";
-            var homepageLink = document.getElementById('homepage-link');
-            var logoLink = document.getElementById('logo-link');
-
-            preventReloadIfHomepage(homepageLink, homepageURL);
-            preventReloadIfHomepage(logoLink, homepageURL);
-        });
-    </script>
-
     <main class="container">
         <section class="container-principal">
             <div class="container-btn">
